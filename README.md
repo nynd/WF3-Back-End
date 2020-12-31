@@ -3,4 +3,3 @@
 ## Exercices 1: Introduction à PHP
 
 [ex1.php](exercices/ex1.php "Introduction à PHP")
-
