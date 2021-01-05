@@ -244,13 +244,28 @@ echo "Hello World!";
 
     
     $x = 1;
-
     echo "<ul>";
     while($x <= 5) {
         echo "<li>$x</li>";
         $x++;
     }
     echo "</ul>";
+
+    $x = 1;
+    echo "<ul>";
+    do {
+        echo "<li>$x</li>";
+        $x++;
+    } while ($x <= 5);
+
+    echo "</ul>";
+
+    echo "<ul>";
+    for ($i = 1; $i <= 5; $i++) {
+        echo "<li>$i</li>";
+    }
+    echo "</ul>";
+    
 
 ?>
   // -Déclarer une variable $x = 1 et une variable $y = 835
@@ -274,15 +289,15 @@ echo "Hello World!";
 ?>
 
 	
-<?php
+
 
   // Donnez une variante de cet boucle do...while
-
+  
+  <?php
 $x = 1;
 $y = 835;
 
 echo"<ul>";
-
 do
 {
  $x++;
@@ -290,7 +305,6 @@ do
 while( $x < $y);
 echo"<li>$x</li>";
 echo"<li>$y</li>";
-
 echo"</ul>";
 
 ?>
@@ -301,20 +315,101 @@ echo"</ul>";
 
 <?php
 
-$x = 0;
 echo"<ul>";
 
-  while ($x < 1000);
-   do {
-    $x = $x+7;
-   }
-
-   echo"<li>$x</li>";
-   
-  end{while};
-
-  echo"</ul>";
+  for ($x = 7; $x <= 1000; $x += 7) 
+      
+  {
+      echo"<li>$x</li>";
+    }
+  
+  
 ?>
+
+<?php
+
+$cars[0] = "Dacia";
+$cars[1] = "BMW";
+$cars[2] = "Toyota";
+
+
+
+
+$cars = ["Dacia", "BMW", "Toyota"]; // similaire aux 3 lignes précédentes
+$cars = array("Dacia", "BMW", "Toyota", "Peugeot"); // similaire à la ligne précédente
+
+$cars[] = "Renault";  // permet d'ajouter un élément en fin de tableau
+$cars[] = "Mercedes";
+echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+$cars[2] = "Mitsubishi";
+echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+
+echo "<p>".count($cars)."</p>"; // fonction count($variable) qui permet de mesurer la taille d'une variable
+
+// PARCOURS DE TABLEAU
+$taille = count($cars);
+echo "<ol type='A' reversed>";
+for($i = 0; $i < $taille ;$i++) {
+    echo "<li>".$cars[$i]."</li>";
+}
+echo "</ol>";
+
+
+?>
+
+<!-- Exemples d'utilisation correcte de 'ul' et 'ol' -->
+<h2> Ma recette de gateau </h2>
+
+<ul>
+    <h3> Ingrédients : </h3>
+    <li> 100g de farine </li>
+    <li> 10g de sucre </li>
+    <li> 3 carrés de chocolat </li>
+</ul>
+<ol>
+    <h3> Réalisation : </h3>
+    <li> bla bla </li>
+    <li> bla bli blou</li>
+    <li> bla bli blo</li>
+</ol>
+
+<h2> Les tableaux associatifs </h2>
+<?php
+
+    $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
+
+    foreach ($age as $donneeAge) {
+        echo "<p>".$donneeAge."</p>";
+    }
+
+    /*
+    Exercice :
+    Écrire un tableau qui contient tous les mois de l'année puis l'afficher
+    grâce aux 3 différentes boucles (for, while et do,while).
+    Exercice :
+    Écrire un tableau associatif, qui associe des pays à des capitales 
+    (France, Norvège, Sénégal, Inde, Chine, Mexique).
+    Afficher ces capitales grâce à un foreach.
+    */
+?>
+
+
+
+
+<?php
+
+   /*Écrire un tableau associatif, qui associe des pays à des capitales 
+   (France, Norvège, Sénégal, Inde, Chine, Mexique).
+   Afficher ces capitales grâce à un foreach.
+   */
+
+    $capitale = array("France"=>"Paris","Norvège"=>"Oslo","Sénégal"=>"Dakar", "Inde"=>"New Delhi","chine"=>"Pékin","Mexique"=>"Mexico");
+
+    foreach ($capitale as $donneeCapitale) {
+        echo "<p>".$donneeCapitale."</p>";
+
+    }
+    ?>
 
  </body>
 </html>-
